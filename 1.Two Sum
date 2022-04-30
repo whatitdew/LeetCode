@@ -1,0 +1,18 @@
+var twoSum = function (nums, target) {
+//Array to store the result 
+result =[];
+//Map to store the difference and its index
+digit = new Map();
+// Loop for each element in the array
+for (let i = 0; i < nums.length; i++) {
+let difference = target - nums[i];
+if (digit.has(difference)) {
+result[0] = i;
+result[1] = digit.get(difference);
+break;
+} else { 
+ digit.set(nums[i], i);
+ }
+ }
+ return result;
+ };
